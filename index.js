@@ -61,7 +61,7 @@ const createPostElement = (post) => {
     const likeButton = document.createElement('button');
     likeButton.classList.add('like-btn');
     likeButton.textContent = `❤️ ${post.likes}`;
-    likeButton.addEventListener('click', (e => {
+    likeButton.addEventListener('click', (() => {
         post.likes += 1;
         likeButton.textContent = `❤️ ${post.likes}`;
         updatePopularPosts();
@@ -79,3 +79,13 @@ allPosts.forEach(post => {
     postsList.appendChild(createPostElement(post));
 });
 updatePopularPosts();
+document.getElementById('about-link')
+    .addEventListener('click', e => {
+    e.preventDefault();
+    document.getElementById('about-neo').focus();
+});
+document.getElementById('dates-link')
+    .addEventListener('click', e => {
+    e.preventDefault();
+    document.getElementById('play-dates').focus();
+});

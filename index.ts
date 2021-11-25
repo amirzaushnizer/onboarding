@@ -102,6 +102,18 @@ allPosts.forEach(post => {
 })
 updatePopularPosts()
 
+document.getElementById('about-link')
+    .addEventListener('click', e => {
+        e.preventDefault()
+        document.getElementById('about-neo').focus()
+    })
+
+document.getElementById('dates-link')
+    .addEventListener('click', e => {
+        e.preventDefault()
+        document.getElementById('play-dates').focus()
+    })
+
 
 
 
